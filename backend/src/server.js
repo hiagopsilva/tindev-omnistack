@@ -13,8 +13,6 @@ const connectedUsers = {}
 io.on('connection', socket => {
     const { user } = socket.handshake.query;
 
-    console.log(user, socket.id);
-
     connectedUsers[user] = socket.id;
 });
 
@@ -33,4 +31,4 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-server.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3333);
